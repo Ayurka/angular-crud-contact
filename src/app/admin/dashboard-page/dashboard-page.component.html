@@ -1,0 +1,36 @@
+<div *ngIf="contacts.length; else noContacts">
+  <div class="uk-card uk-card-default uk-card-body">
+    <div class="uk-margin">
+      <input [(ngModel)]="searchName" class="uk-input" type="text" placeholder="Поиск...">
+    </div>
+    <table class="uk-table uk-table-striped">
+      <thead>
+      <th>#</th>
+      <th>Имя</th>
+      <th>Email</th>
+      <th>Телефон</th>
+      <th>Действие</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contact of contacts | search:searchName; let idx = index">
+        <td>{{ idx + 1 }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>
+          <button
+            [routerLink]="['/admin', 'contact', contact.id, 'edit']"
+            class="uk-button uk-button-default"
+          >
+            Редактировать
+          </button>
+          <button (click)="delete(+contact.id)" class="uk-button uk-button-danger">Удалить</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #noContacts>
+  <p class="uk-text-center uk-h3">Нет контактов</p>
+</ng-template>

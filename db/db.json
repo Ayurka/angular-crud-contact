@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "id": 3,
+      "name": "Роджер Федерер",
+      "email": "federer@test.com",
+      "phone": "89666666666"
+    },
+    {
+      "id": 4,
+      "name": "Михаэль Шумахер",
+      "email": "schumacher@test.com",
+      "phone": "89777777777"
+    },
+    {
+      "id": 5,
+      "name": "Майкл Джордан",
+      "email": "jordan@test.com",
+      "phone": "89888888888"
+    },
+    {
+      "name": "Билл Гейтс",
+      "email": "gates@test.com",
+      "phone": "89999999999",
+      "id": 6
+    }
+  ]
+}

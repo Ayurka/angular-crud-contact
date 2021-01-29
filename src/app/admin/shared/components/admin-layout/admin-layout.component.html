@@ -1,0 +1,26 @@
+<app-alert></app-alert>
+<nav class="uk-navbar-container uk-margin-bottom" data-uk-navbar>
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo" href="#">Админка</a>
+  </div>
+  <div *ngIf="getAuth().isAuthenticated()" class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li routerLinkActive="uk-active">
+        <a [routerLink]="['/admin', 'dashboard']">
+          Контакты
+        </a>
+      </li>
+      <li routerLinkActive="uk-active">
+        <a [routerLink]="['/admin', 'create']">
+          Создать
+        </a>
+      </li>
+      <li>
+        <a href="#" (click)="logout($event)">Выйти</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="uk-container">
+  <router-outlet></router-outlet>
+</div>
